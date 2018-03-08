@@ -7,6 +7,7 @@
 //
 
 #import "TQPieChart.h"
+#import "TQChartUtilities.h"
 
 @implementation TQPieChartSegment
 
@@ -70,8 +71,12 @@
             if (self.drawManager.fillChart) {
                 rad = self.drawManager.radius * 0.5;
             }
-            CGPoint p = [self centerOfRadius:rad start:startPercentage end:endPercentage];
-            [self.delegate pieChart:self willDisplaySegmentWithIndex:i positionOfCenter:p];
+            CGFloat centerPercentage = (startPercentage + endPercentage) * 0.5;
+            CGFloat radian = centerPercentage * 2 * M_PI - (2 * M_PI - self.startRadian);
+            CGPoint p = [TQChartUtilities coordinatePointOfCenter:self.drawManager.center radius:rad radian:radian];
+            if ([self.delegate respondsToSelector:@selector(pieChart:willDisplaySegmentWithIndex:positionOfCenter:)]) {
+                [self.delegate pieChart:self willDisplaySegmentWithIndex:i positionOfCenter:p];
+            }
         }
         
         CAShapeLayer *shapeLayer = [self createLayerWithCenter:self.drawManager.center
@@ -216,28 +221,28 @@
     return 180 / M_PI * radian;
 }
 
-- (CGPoint)centerOfRadius:(CGFloat)radius
-                    start:(CGFloat)startPercentage
-                      end:(CGFloat)endPercentage {
-    CGFloat centerPercentage = (startPercentage + endPercentage) * 0.5;
-    CGFloat radian = centerPercentage * 2 * M_PI;
-    CGPoint center = self.drawManager.center;
-    CGPoint p = CGPointZero;
-    if (radian < M_PI_2) {
-        p.x = center.x + radius * sin(radian);
-        p.y = center.y - radius * cos(radian);
-    } else if (radian < M_PI) {
-        p.x = center.x + radius * sin(M_PI-radian);
-        p.y = center.y + radius * cos(M_PI-radian);
-    } else if (radian < 3 * M_PI_2) {
-        p.x = center.x - radius * cos(3 * M_PI_2 - radian);
-        p.y = center.y + radius * sin(3 * M_PI_2 - radian);
-    } else {
-        p.x = center.x - radius * sin(2 * M_PI - radian);
-        p.y = center.y - radius * cos(2 * M_PI - radian);
-    }
-    return p; // 求每个区域的中心点坐标
-}
+//- (CGPoint)centerOfRadius:(CGFloat)radius
+//                    start:(CGFloat)startPercentage
+//                      end:(CGFloat)endPercentage {
+//    CGFloat centerPercentage = (startPercentage + endPercentage) * 0.5;
+//    CGFloat radian = centerPercentage * 2 * M_PI + M_PI_2;
+//    CGPoint center = self.drawManager.center;
+//    CGPoint p = CGPointZero;
+//    if (radian < M_PI_2) {
+//        p.x = center.x + radius * sin(radian);
+//        p.y = center.y - radius * cos(radian);
+//    } else if (radian < M_PI) {
+//        p.x = center.x + radius * sin(M_PI-radian);
+//        p.y = center.y + radius * cos(M_PI-radian);
+//    } else if (radian < 3 * M_PI_2) {
+//        p.x = center.x - radius * cos(3 * M_PI_2 - radian);
+//        p.y = center.y + radius * sin(3 * M_PI_2 - radian);
+//    } else {
+//        p.x = center.x - radius * sin(2 * M_PI - radian);
+//        p.y = center.y - radius * cos(2 * M_PI - radian);
+//    }
+//    return p; // 求每个区域的中心点坐标
+//}
 
 #pragma mark - Events
 
@@ -294,7 +299,9 @@
                         self.clickedLayer.hidden = YES;
                     }];
                     UIColor *originalColor = [self.segments[idx] color];
-                    CGPoint p = [self centerOfRadius:self.drawManager.effectOffset start:startPercentage end:endPercentage];
+                    CGFloat centerPercentage = (startPercentage + endPercentage) * 0.5;
+                    CGFloat radian = centerPercentage * 2 * M_PI - (2 * M_PI - self.startRadian);
+                    CGPoint p = [TQChartUtilities coordinatePointOfCenter:self.drawManager.center radius:self.drawManager.effectOffset  radian:radian];
                     self.highlightLayer = [self createLayerWithCenter:p
                                                                radius:self.drawManager.radius
                                                          startPercent:startPercentage
@@ -308,7 +315,9 @@
                     if (self.drawManager.fillChart) {
                         rad = self.drawManager.radius * 0.5;
                     }
-                    CGPoint p = [self centerOfRadius:rad start:startPercentage end:endPercentage];
+                    CGFloat centerPercentage = (startPercentage + endPercentage) * 0.5;
+                    CGFloat radian = centerPercentage * 2 * M_PI - (2 * M_PI - self.startRadian);
+                    CGPoint p = [TQChartUtilities coordinatePointOfCenter:self.drawManager.center radius:rad radian:radian];
                     [self.delegate pieChart:self didClickedSegmentAtIndex:idx positionOfCenter:p];
                 }
                 *stop = YES;

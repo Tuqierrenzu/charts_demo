@@ -19,6 +19,11 @@
 		61C5B5E8204E835F008A2829 /* TQPieChartDrawManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C5B5E7204E835F008A2829 /* TQPieChartDrawManager.m */; };
 		61C5B5EB204E8C0D008A2829 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C5B5EA204E8C0D008A2829 /* BaseViewController.m */; };
 		61C5B5F1204E8C2F008A2829 /* Draw1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C5B5F0204E8C2F008A2829 /* Draw1ViewController.m */; };
+		61C5B6092050C22B008A2829 /* TQChartUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C5B6082050C22B008A2829 /* TQChartUtilities.m */; };
+		61C5B60C2050C33A008A2829 /* UIBezierPath+TQChartExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C5B60B2050C33A008A2829 /* UIBezierPath+TQChartExtend.m */; };
+		61C5B60F2050D4C3008A2829 /* TQRadarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C5B60E2050D4C3008A2829 /* TQRadarChart.m */; };
+		61C5B6122050F2AE008A2829 /* Draw2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C5B6112050F2AE008A2829 /* Draw2ViewController.m */; };
+		61C5B615205109EB008A2829 /* TQTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 61C5B614205109EB008A2829 /* TQTextLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +68,16 @@
 		61C5B5EA204E8C0D008A2829 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		61C5B5EF204E8C2F008A2829 /* Draw1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Draw1ViewController.h; sourceTree = "<group>"; };
 		61C5B5F0204E8C2F008A2829 /* Draw1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Draw1ViewController.m; sourceTree = "<group>"; };
+		61C5B6072050C22B008A2829 /* TQChartUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TQChartUtilities.h; sourceTree = "<group>"; };
+		61C5B6082050C22B008A2829 /* TQChartUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TQChartUtilities.m; sourceTree = "<group>"; };
+		61C5B60A2050C339008A2829 /* UIBezierPath+TQChartExtend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+TQChartExtend.h"; sourceTree = "<group>"; };
+		61C5B60B2050C33A008A2829 /* UIBezierPath+TQChartExtend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+TQChartExtend.m"; sourceTree = "<group>"; };
+		61C5B60D2050D4C3008A2829 /* TQRadarChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TQRadarChart.h; sourceTree = "<group>"; };
+		61C5B60E2050D4C3008A2829 /* TQRadarChart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TQRadarChart.m; sourceTree = "<group>"; };
+		61C5B6102050F2AE008A2829 /* Draw2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Draw2ViewController.h; sourceTree = "<group>"; };
+		61C5B6112050F2AE008A2829 /* Draw2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Draw2ViewController.m; sourceTree = "<group>"; };
+		61C5B613205109EB008A2829 /* TQTextLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TQTextLayer.h; sourceTree = "<group>"; };
+		61C5B614205109EB008A2829 /* TQTextLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TQTextLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +168,8 @@
 				61C5B5EA204E8C0D008A2829 /* BaseViewController.m */,
 				61C5B5EF204E8C2F008A2829 /* Draw1ViewController.h */,
 				61C5B5F0204E8C2F008A2829 /* Draw1ViewController.m */,
+				61C5B6102050F2AE008A2829 /* Draw2ViewController.h */,
+				61C5B6112050F2AE008A2829 /* Draw2ViewController.m */,
 			);
 			path = classes;
 			sourceTree = "<group>";
@@ -160,10 +177,18 @@
 		61C5B5E5204E81C5008A2829 /* charts */ = {
 			isa = PBXGroup;
 			children = (
+				61C5B6072050C22B008A2829 /* TQChartUtilities.h */,
+				61C5B6082050C22B008A2829 /* TQChartUtilities.m */,
+				61C5B613205109EB008A2829 /* TQTextLayer.h */,
+				61C5B614205109EB008A2829 /* TQTextLayer.m */,
+				61C5B60A2050C339008A2829 /* UIBezierPath+TQChartExtend.h */,
+				61C5B60B2050C33A008A2829 /* UIBezierPath+TQChartExtend.m */,
 				61C5B5E6204E835F008A2829 /* TQPieChartDrawManager.h */,
 				61C5B5E7204E835F008A2829 /* TQPieChartDrawManager.m */,
 				61C5B5E2204E81B8008A2829 /* TQPieChart.h */,
 				61C5B5E3204E81B8008A2829 /* TQPieChart.m */,
+				61C5B60D2050D4C3008A2829 /* TQRadarChart.h */,
+				61C5B60E2050D4C3008A2829 /* TQRadarChart.m */,
 			);
 			path = charts;
 			sourceTree = "<group>";
@@ -301,8 +326,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61C5B60F2050D4C3008A2829 /* TQRadarChart.m in Sources */,
 				61C5B5E4204E81B8008A2829 /* TQPieChart.m in Sources */,
+				61C5B6092050C22B008A2829 /* TQChartUtilities.m in Sources */,
+				61C5B615205109EB008A2829 /* TQTextLayer.m in Sources */,
+				61C5B6122050F2AE008A2829 /* Draw2ViewController.m in Sources */,
 				61C5B5EB204E8C0D008A2829 /* BaseViewController.m in Sources */,
+				61C5B60C2050C33A008A2829 /* UIBezierPath+TQChartExtend.m in Sources */,
 				61C5B5B4204E80EF008A2829 /* ViewController.m in Sources */,
 				61C5B5E8204E835F008A2829 /* TQPieChartDrawManager.m in Sources */,
 				61C5B5F1204E8C2F008A2829 /* Draw1ViewController.m in Sources */,

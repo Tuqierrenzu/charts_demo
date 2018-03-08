@@ -31,7 +31,7 @@
 #pragma mark - setup1
 
 - (void)setup1 {
-    CGRect rect = CGRectMake(20, 80, 200, 200);
+    CGRect rect = CGRectMake(20, 100, 200, 200);
     TQPieChartDrawManager *drawManager = [TQPieChartDrawManager defaultManager];
     drawManager.lineWidth = 70;
     CGFloat w = rect.size.width / 2;
@@ -39,9 +39,10 @@
     drawManager.radius = w - drawManager.lineWidth / 2;
     drawManager.clickedEffect = TQPieChartClickedEffectDisconnect;
     
+    
     _pieChart1 = [[TQPieChart alloc] initWithFrame:rect drawManager:drawManager];
     _pieChart1.center = CGPointMake(self.view.bounds.size.width / 2, _pieChart1.center.y);
-    _pieChart1.backgroundColor = [UIColor lightGrayColor];
+    _pieChart1.backgroundColor = [UIColor whiteColor];
     _pieChart1.delegate = self;
     [self.view addSubview:_pieChart1];
     
@@ -101,7 +102,7 @@
 #pragma mark - setup2
 
 - (void)setup2 {
-    CGRect rect = CGRectMake(20, 350, 200, 200);
+    CGRect rect = CGRectMake(20, 370, 200, 200);
     TQPieChartDrawManager *drawManager = [TQPieChartDrawManager defaultManager];
     CGFloat w = rect.size.width / 2;
     drawManager.center = CGPointMake(w, w);
@@ -109,11 +110,13 @@
     drawManager.fillChart = YES;
     drawManager.clickedEffect = TQPieChartClickedEffectHighlight;
     drawManager.effectOffset = 20;
+    drawManager.startPosition = TQPieChartStartPositionRight;
     
     _pieChart2 = [[TQPieChart alloc] initWithFrame:rect drawManager:drawManager];
     _pieChart2.center = CGPointMake(self.view.bounds.size.width / 2, _pieChart2.center.y);
-    _pieChart2.backgroundColor = [UIColor lightGrayColor];
+    _pieChart2.backgroundColor = [UIColor whiteColor];
     _pieChart2.delegate = self;
+    
     [self.view addSubview:_pieChart2];
     
     [_pieChart2 reloadSegments:self.data2];

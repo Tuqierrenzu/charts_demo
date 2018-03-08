@@ -33,6 +33,7 @@
     _styles = @[].mutableCopy;
     _classes  = @[].mutableCopy;
     [self addClassName:@"Draw1ViewController" style:@"TQPieChart"];
+    [self addClassName:@"Draw2ViewController" style:@"TQRadarChart"];
 }
 
 - (void)addClassName:(NSString *)className style:(NSString *)style {
